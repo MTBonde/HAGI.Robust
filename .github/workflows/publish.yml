@@ -1,4 +1,4 @@
-name: CD - Publish NuGet Package
+name: CD - Publish NuGet Package.
 
 on:
   push:
