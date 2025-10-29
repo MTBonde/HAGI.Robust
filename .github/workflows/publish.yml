@@ -21,10 +21,17 @@ jobs:
         with:
           dotnet-version: "9.0.x"
 
+      - name: Restore
+        run: dotnet restore ./src/Hagi.Robust/Hagi.Robust.csproj
+
+      - name: Build
+        run: dotnet build ./src/Hagi.Robust/Hagi.Robust.csproj --configuration Release --no-restore
+
       - name: Pack
         run: |
           dotnet pack ./src/Hagi.Robust/Hagi.Robust.csproj \
             --configuration Release \
+            --no-build \
             -p:PackageVersion=${{ env.VERSION }} \
             --output ./artifacts
 
