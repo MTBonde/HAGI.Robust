@@ -3,8 +3,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.1.0</Version>
 
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>HAGI.Robust</PackageId>
     <Authors>MTBonde</Authors>
     <Company>Unreal MicroServicing</Company>
@@ -12,6 +12,7 @@
     <RepositoryUrl>https://github.com/MTBonde/HAGI.Robust</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,8 @@
     <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.0.0" />
     <PackageReference Include="Polly.Core" Version="8.6.4" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.8.16" />
   </ItemGroup>
 
   <ItemGroup>
