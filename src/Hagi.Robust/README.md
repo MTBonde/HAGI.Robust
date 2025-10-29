@@ -12,8 +12,17 @@ A shared resilience toolkit for HAGI microservices.
 
 ## Usage
 ```csharp
+using Hagi.Robust;
+
+var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddHagiResilience();
-app.MapHealthChecks("/health/ready");
+builder.Services.AddSingleton<IStartupProbe>(sp => new RabbitProbe(/* ... */));
+
+var app = builder.Build();
+app.MapReadinessEndpoint();
+app.Run();
+
 ```
 
 ## Installation
