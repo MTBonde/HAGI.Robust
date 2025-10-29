@@ -23,13 +23,13 @@ jobs:
             **/packages.lock.json
 
       - name: Restore
-        run: dotnet restore Hagi.Robust.sln --locked-mode
+        run: dotnet restore HAGI.Robust.sln --locked-mode
 
       - name: Build (Release, warnings as errors)
-        run: dotnet build Hagi.Robust.sln --no-restore -c Release -warnaserror
+        run: dotnet build HAGI.Robust.sln --no-restore -c Release -warnaserror
 
       - name: Test
-        run: dotnet test Hagi.Robust.sln --no-build -c Release --logger "trx;LogFileName=test.trx"
+        run: dotnet test HAGI.Robust.sln --no-build -c Release --logger "trx;LogFileName=test.trx"
 
       - name: Upload test results
         if: always()

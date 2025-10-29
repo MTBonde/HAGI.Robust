@@ -22,10 +22,11 @@ jobs:
           dotnet-version: "9.0.x"
 
       - name: Pack
-        run: dotnet pack ./src/Hagi.Robust/Hagi.Robust.csproj \
-          -c Release \
-          -p:PackageVersion=${{ env.VERSION }} \
-          -o ./artifacts
+        run: |
+          dotnet pack ./src/Hagi.Robust/Hagi.Robust.csproj \
+            --configuration Release \
+            -p:PackageVersion=${{ env.VERSION }} \
+            --output ./artifacts
 
       - name: Publish to GitHub Packages
         run: dotnet nuget push "./artifacts/*.nupkg" \
